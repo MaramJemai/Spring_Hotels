@@ -1,0 +1,46 @@
+<!DOCTYPE  html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec=https://www.thymeleaf.org/thymeleaf-extras-springsecurity5 
+      layout:decorator="template">
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+<html   lang= 'en'  xmlns:th='http://www.w3.org/1000/xhtml'>
+<head th:replace='header::header'/>
+<title>WELCOME </title>
+<style>
+h1{
+margin-top:10px;
+  text-align: center;
+  text-shadow: 2px 2px;
+}
+
+p{
+  text-align: center;
+  margin-bottom:40px;
+}
+
+</style>
+
+</head>
+<body>
+<div th:replace='header::navbar'/>
+</div>
+<div class="container mt-5">
+<h1>A PROPOS</h1>
+
+
+<p>
+Tired of your daily routine? Seeking for a place to stay and rest with your family? You are in the right place! Our spa resort and hotel provides luxury and historic accommodations for travelers. It combines modern style and amenities with traditional values.
+
+All rooms are equipped with air conditioners and LCD TVs. Free WI-FI service is available throughout the territory of the hotel. Our restaurant food and meals from world cuisines unite people connecting history and traditions. Experience our warm hospitality, high quality of service and exceptional comfort! Make a reservation for your dream vacation today!
+</p>
+
+
+
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorator="template">
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+<head th:replace='header::header'/>
+<meta charset="utf-8">
+<title>Liste des Hotels</title>
+</head>
+<body>
+<div th:replace='header::navbar'/>
+<div class="container mt-5">
+<h1>Consulter la liste des Chambres</h1>
+<div class="card">
+ <div class="card-header">
+ Liste des Hotels
+</div>
+ <div class="card-body">
+ <table class="table table-striped">
+ <tr>
+      <th>ID</th><th>Numero</th><th>Type</th><th>Capacite</th><th>Prix</th><th>Occupe</th><th>Action</th><th></th>
+ </tr> 
+ <tr th:each="h:${chambres}">
+      <td th:text="${h.id}"></td>
+ <td th:text="${h.numero}"></td>
+ <td th:text="${h.type}"></td>
+ <td th:text="${h.capacite}"></td> 
+ <td th:text="${h.prix}"></td> 
+ <td th:text="${h.occupe}"></td>
+<td><a class="btn btn-danger" sec:authorize="hasRole('ADMIN')" onclick="return confirm('Etes-vous sûr ?')" th:href="@{supprimerChambre(id=${h.id}, 
+page=${currentPage},size=${size})}">Supprimer</a></td>
+<td ><a sec:authorize="hasRole('ADMIN')" class="btn btn-success" th:href="@{modifierChambre(id=${h.id})}">Editer</a></td>
+ </tr> 
+ </table>
+ <ul class="nav nav-pills">
+ <li th:each="page,status:${pages}">
+ <a th:class="${status.index==currentPage?'btn btn-primary':'btn' }"
+ th:href="@{ ListeChambres(page=${status.index}, size=${size} ) }"
+ th:text="${status.index }"></a>
+ </li>
+ </ul>
+ </div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE  html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec=https://www.thymeleaf.org/thymeleaf-extras-springsecurity5 
+      layout:decorator="template">
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+<html   lang= 'en'  xmlns:th='http://www.w3.org/1000/xhtml'>
+<head th:replace='header::header'/>
+<title>WELCOME </title>
+<style>
+
+.wel{
+margin-left:0px;
+}
+#row1{
+width : 100%; 
+min-width : 300px;
+height : 100%; 
+max-height : 350px;
+padding-bottom:20px;
+}
+
+#row2{
+width : 100%; 
+min-width : 300px;
+height : 100%; 
+max-height : 350px;
+padding-bottom:20px;
+}
+
+.row3{
+width : 100%; 
+min-width : 250px;
+height : 100%; 
+max-height : 350px;
+padding-top:20px;
+margin-bottom:40px;
+}
+
+#row4{
+width : 100%; 
+min-width : 300px;
+height : 100%; 
+max-height : 350px;
+margin-top:20px;
+margin-bottom:40px;
+}
+
+#hot{
+margin-left:10px;
+padding-right:10px;
+margin-bottom:40px;
+margin-bottom:10px;
+object-position:left;
+}
+h1{
+margin-top:10px;
+  text-align: center;
+  text-shadow: 2px 2px;
+}
+h2{
+margin-top:100px;
+  text-align: center;
+  text-shadow: 2px 2px;
+}
+
+p{
+  text-align: center;
+  margin-bottom:40px;
+}
+
+</style>
+
+</head>
+<body>
+<div th:replace='header::navbar'/>
+</div>
+<div class="container mt-5">
+<h1>Acceuil</h1>
+
+
+
+
+<div class="wel">
+
+<p>Welcome to our wonderful world. We sincerely hope that each and every user entering our website 
+will find exactly what he/she is looking for. With advanced features of activating account and new login widgets, 
+you will definitely have a great experience of using our web page.</p>
+<div class="container">
+  <div class="row g-2">
+    <div class="col-6">
+      <div id="row1">
+      <h2>Best Service</h2><p>
+Our mission is to attract and retain customers by providing 
+Best in Class solutions and fostering a 
+profitable, disciplined culture of safety, service, and trust.</p>
+      </div>
+    </div>
+    <div class="col-6">
+      <img  src="res1.jpg" alt="image hotel" id="row2">
+    </div>
+    <div class="col-6">
+      <img src="res3.jpg" alt="image hotel"  class="row3">
+    </div>
+    <div class="col-6">
+      <div  id="row4">
+      <h2>Rooms & Suites</h2><p>
+Royal Villas offers the finest accommodations with unique designs that provide both a luxurious and relaxing environment. Specially
+selected fabrics and finishes vary from room to room, offering guests a variety of beautiful and unique atmospheres to select from.</p>
+      </div>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+</div>
+</div>
+<img src="hot1.png" alt="image hotel"  id="hot">
+<div th:replace='footer::footer'/>
+</div>
+</body>
+
+</html>

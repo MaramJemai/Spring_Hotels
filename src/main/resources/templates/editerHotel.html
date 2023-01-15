@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorator="template">
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+<head th:replace='header::header'>
+<meta charset="utf-8">
+<title>Modifier des Hotels</title>
+</head>
+<body>
+<div th:replace='header::navbar'/>
+ <div layout:fragment="Mycontent">
+<div class="container mt-5">
+<div class="card">
+  <div class="card-header">
+   Modifier des Hotels
+  </div>
+  	<div class="card-body">
+	<form th:action="@{saveHotel}" method="post">
+		<div class="form-group">
+			<label class="control-label" hidden>ID Hotel :</label> 
+		       <input type="hidden" name="id" class="form-control" th:value="${hotel.id}"  />
+		</div>					
+		<div class="form-group">
+			<label class="control-label">Nom Hotel :</label> 
+			 <input type="text" name="nom" class="form-control" th:value="${hotel.nom}"  />
+			<span th:errors= ${hotel.nom} class="text-danger"> </span>	 
+		</div>
+		<div class="form-group">
+			<label class="control-label">Adresse Hotel :</label> 
+			 <input type="text" name="adresse" class="form-control" th:value="${hotel.adresse}"  />
+			<span th:errors= ${hotel.adresse} class="text-danger"> </span>	 
+		</div>
+		<div class="form-group">
+			<label class="control-label">Etoile Hotel :</label> 
+			 <input type="number" name="etoile" class="form-control" th:value="${hotel.etoile}"  />
+			<span th:errors= ${hotel.etoile} class="text-danger"> </span>	 
+		</div>
+		<div class="form-group">
+			<label class="control-label">Contact Hotel :</label> 
+			 <input type="number" name="contact" class="form-control" th:value="${hotel.contact}"  />
+			<span th:errors= ${hotel.contact} class="text-danger"> </span>	 
+		</div>
+		<div>
+		<button type="submit" class="btn btn-primary">Valider</button>
+		</div>
+		</form>
+		</div>
+		</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="template">     
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+<head>
+<meta charset="utf-8">
+<title>Gestion des Chambres</title>
+</head>
+<body>
+ <div layout:fragment="Mycontent">
+<div class="container mt-5">
+<div class="card">
+  <div class="card-header">
+   Gestion des Chambres
+  </div>
+  	<div class="card-body">
+	<form th:action="@{saveChambre}" method="post">
+	<div class="form-group">
+			<label class="control-label" hidden>ID Chambre :</label> 
+		       <input type="hidden" name="id" class="form-control" th:value="${chambre.id}"  />
+		</div>
+		<div class="form-group">
+			<label class="control-label" hidden>Numero Chambre :</label> 
+		       <input type="hidden" name="numero" class="form-control" th:value="${chambre.numero}"  />
+		</div>					
+		<div class="form-group">
+			<label class="control-label">Type Chambre :</label> 
+			 <input type="text" name="type" class="form-control" th:value="${chambre.type}"  />
+			<span th:errors= ${chambre.type} class="text-danger"> </span>	 
+		</div>
+		<div class="form-group">
+			<label class="control-label">Capacite Chambre :</label> 
+			 <input type="number" name="capacite" class="form-control" th:value="${chambre.capacite}"  />
+			<span th:errors= ${chambre.capacite} class="text-danger"> </span>	 
+		</div>
+		<div class="form-group">
+			<label class="control-label">Prix Chambre :</label> 
+			 <input type="number" name="prix" class="form-control" th:value="${chambre.prix}"  />
+			<span th:errors= ${chambre.prix} class="text-danger"> </span>	 
+		</div>
+		<div class="form-group">
+			<label class="control-label">Occupe Chambre :</label> 
+			 <input type="number" name="occupe" class="form-control" th:value="${chambre.occupe}"  />
+			<span th:errors= ${chambre.occupe} class="text-danger"> </span>	 
+		</div>
+		<div>
+		<button type="submit" class="btn btn-primary">Valider</button>
+		</div>
+		</form>
+		</div>
+		</div>
+</div>
+</div>
+</body>
+</html>

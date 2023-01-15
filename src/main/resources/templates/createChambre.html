@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorator="template">
+<link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+<head  th:replace='header::header'>
+	<meta charset="utf-8">
+	<title>Ajout des Chambres</title>
+</head>
+<body>
+	<div th:replace='header::navbar'/>
+		<div class="container mt-5">
+			<div class="card">
+				<div class="card-header"> Ajout des Chambres </div>
+				<div class="card-body">
+					<form th:action="@{saveChambre}" method="post">
+					<div class="form-group">
+							<label class="control-label">Numero Chambre :</label>
+							<input type="number" name="numero" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label class="control-label">Type Chambre :</label>
+							<input type="text" name="type" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label class="control-label">Capacite Chambre :</label>
+							<input type="number" name="capacite" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label class="control-label">Prix Chambre :</label>
+							<input type="number" name="prix" class="form-control" />
+						</div>
+						<div class="form-group">
+							<label class="control-label">Occupe Chambre :</label>
+							<input type="number" name="occupe" class="form-control" />
+						</div>
+						<div>
+							<button type="submit" class="btn btn-primary">Valider</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
